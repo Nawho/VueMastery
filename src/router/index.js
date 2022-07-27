@@ -26,7 +26,7 @@ const routes = [
     redirect: { name: "EventListView" },
   },
   {
-    path: "/*/:catchAll(.*)",
+    path: "/:catchAll(.*)",
     component: NotFoundComponent,
   },
 ]
