@@ -1,20 +1,22 @@
 <template>
-  <div class="event-card">
-    <span>@ {{ props.event.time }} on {{ props.event.date }}</span>
-    <h4>{{ props.event.title }}</h4>
-  </div>
+  <router-link
+    class="event-link"
+    :to="{ name: 'EventDetailsView', params: { id: event.id } }"
+  >
+    <div class="event-card">
+      <span>@ {{ props.event.time }} on {{ props.event.date }}</span>
+      <h4>{{ props.event.title }}</h4>
+    </div>
+  </router-link>
 </template>
 
 <script setup>
+/* eslint-disable*/
 import { defineProps } from "vue"
 
-const name = "EventCard"
 const props = defineProps({
-  event: Object
+  event: Object,
 })
-
-console.log(props.event)
-
 
 </script>
 
@@ -30,6 +32,7 @@ console.log(props.event)
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 .event-card>.title {
   margin: 0;
