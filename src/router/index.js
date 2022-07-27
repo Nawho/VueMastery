@@ -22,9 +22,13 @@ const routes = [
     component: EventDetails,
   },
   {
-    path: "*",
-    component: NotFoundComponent
-  }
+    path: "/",
+    redirect: { name: "EventListView" },
+  },
+  {
+    path: "/*/:catchAll(.*)",
+    component: NotFoundComponent,
+  },
 ]
 
 const router = createRouter({
